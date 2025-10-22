@@ -1,7 +1,7 @@
 {
     "mostrarParadas": "si",
     "rutas": {
-        "Camion CUAUHTEMOC": [
+        "Camión CUAUHTEMOC": [
             [-104.8951, 21.5105],
             [-104.8923, 21.5128]
         ],
@@ -175,4 +175,5 @@
     }
 
 }
+
 
