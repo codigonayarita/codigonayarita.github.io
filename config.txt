@@ -1,0 +1,85 @@
+# Configuración de rutas para la aplicación de movilidad
+# Formato: nombre_ruta=sentido
+# Sentidos disponibles: normal, invertida
+# 
+# Si dice "normal", la ruta se dibuja tal cual está en el GeoJSON
+# Si dice "invertida", las coordenadas del LineString se invierten antes de mostrarse
+
+# ========================================
+# RUTAS DE MOVILIDAD (Movilidad.geojson)
+# ========================================
+
+# Rutas principales de Tepic
+Cuauhtémoc=invertida
+Centro Seguro por Morelos=invertida
+Centro Seguro-Alaska=invertida
+Faizan=invertida
+Lomas Altas=invertida
+Morelos=invertida
+Pedregal=invertida
+UNINAY=invertida
+Amado Nervo - Universidad=invertida
+Peñitas=invertida
+Río Suchiate=invertida
+Ruta 15-1=invertida
+Sauces 1=invertida
+Sauces 2=invertida
+INDECO=invertida
+Laguna=invertida
+Ojo de Agua=invertida
+Senderos=invertida
+Allende=invertida
+Insurgentes=invertida
+México=invertida
+
+# Rutas de Ahuacate
+Ahuacate Consorcio=invertida
+Ahuacate Directo=invertida
+Ahuacate Huachines=invertida
+Agrónomos Universidad=invertida
+Lo de Lamedo=invertida
+La Yerba=invertida
+
+# Rutas de Progreso
+Progreso 1=invertida
+Progreso 2=normal
+Progreso 3=invertida
+Progreso 4=invertida
+Progreso 5=invertida
+Progreso 6-2=invertida
+
+# Rutas de Cantera y Hospitales
+Cantera Hospitales 1=invertida
+Cantera Hospitales 2=invertida
+Jazmines=invertida
+Llanitos 2 Alamos=invertida
+Llanitos Aurora=invertida
+Llanitos y Prado=invertida
+Mololoa Alamo=invertida
+Mololoa Villas del Prado=invertida
+Venceremos=invertida
+
+# ========================================
+# RUTAS DE XALISCO (xalisco.geojson)
+# ========================================
+
+# Rutas principales de Xalisco
+Xalisco-Colinas(Lomas Verdes)=normal
+Xalisco-Colinas(Saturno)=invertida
+Xalisco R1=invertida
+Xalisco R2=invertida
+Canoas=invertida
+# ========================================
+# RUTAS EXTERNAS (xalisco.geojson)
+# ========================================
+Compostela=invertida
+
+# ========================================
+# NOTAS IMPORTANTES
+# ========================================
+# 
+# - Todas las rutas están configuradas como "normal" por defecto
+# - Para cambiar el sentido de una ruta, cambia "normal" por "invertida"
+# - Ejemplo: CUAUHTEMOC=invertida (invertirá la dirección de la ruta CUAUHTEMOC)
+# - Las rutas se identifican por su título exacto del GeoJSON
+# - Si agregas nuevas rutas, sigue el mismo formato: nombre_ruta=sentido

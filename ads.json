@@ -1,0 +1,75 @@
+[{
+  "mostrarAnuncios": "si",
+  "ads": [
+    {
+      "id": "ad-001",
+      "type": "banner",
+      "title": "Moira",
+      "text": "•Comida y Cena• Bebidas Refil • El primer restaurante todo incluido en México",
+      "image": "img/moira.webp",
+      "link": "https://www.facebook.com/MoiraTodoIncluidoTpc",
+      "phone": "3118908082",
+      "whatsapp": "no",
+      "municipio": "Tepic",
+      "active": true,
+      "start": "2025-08-01",
+      "end": "2026-12-31"
+    },
+    {
+      "id": "ad-002",
+      "type": "banner",
+      "title": "Tienda De Ropa Revolución",
+      "text": "REVOLUCIONANDO TU VESTIR.",
+      "image": "img/revolucion.webp",
+      "link": "https://www.facebook.com/revolucion.fashion",
+      "phone": "3111108649",
+      "whatsapp": "no",
+      "municipio": "Tepic",
+      "active": true,
+      "start": "2025-08-01",
+      "end": "2026-12-31"
+    },
+
+    {
+      "id": "ad-003",
+      "type": "banner",
+      "title": "Punto Moda ",
+      "text": "Tienda de ropa multimarca para Caballero.",
+      "image": "img/puntomoda.webp",      "link": "",
+      "phone": "3111606509",      
+      "whatsapp": "no",
+      "municipio": "Tepic",
+      "active": true,
+      "start": "2025-08-01",
+      "end": "2026-12-31"
+    },
+    {
+      "id": "ad-004",
+      "type": "banner",
+      "title": "Ixtete Dulce de Miel ",
+      "text": "rico y delicioso ixtete 😋",
+      "image": "https://i.ytimg.com/vi/n2dtkLlpO_E/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBReunNpfDDpaJgdx3PCfxGBevyzA",
+      "link": "",
+      "phone": "3118902905",
+      "whatsapp": "no",
+      "municipio": "Tepic",
+      "active": true,
+      "start": "2025-08-01",
+      "end": "2026-12-31"
+    },
+    {
+      "id": "ad-005",
+      "type": "banner",
+      "title": "Padron_tattoo",
+      "text": "Lo mejor que puedes hacer, es darte un gustito, y que mejor si es con un tatuajito nuevo 😎🔥🔥",
+      "image": "img/tatto.webp",
+      "link": "https://www.facebook.com/profile.php?id=100072302776052",
+      "phone": "3112573923",
+      "whatsapp": "no",
+      "municipio": "Tepic",
+      "active": true,
+      "start": "2025-08-01",
+      "end": "2026-12-31"
+    }
+  ]
+}]
