@@ -70,20 +70,6 @@
       "active": true,
       "start": "2025-08-01",
       "end": "2026-12-31"
-    },
-    {
-      "id": "ad-006",
-      "type": "banner",
-      "title": "Tacos de Caca",
-      "text": "2x1 en tacos de caca llegando con la app",
-      "image": "https://www.dgcs.unam.mx/boletin/bdboletin/multimedia/WAV240301/228(1).jpg",
-      "link": "https://www.facebook.com/profile.php?id=100072302776052",
-      "phone": "3112573923",
-      "whatsapp": "no",
-      "municipio": "Tepic",
-      "active": true,
-      "start": "2025-08-01",
-      "end": "2026-12-31"
     }
   ]
 }]
