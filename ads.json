@@ -76,16 +76,16 @@
       "id": "ad-006",
       "type": "banner",
       "title": "Trias Studio Nails",
-      "text": "Uñas impecables y un servicio que te consiente. ¡Agenda ya!",
+      "text": "Date un momento para ti y luce unas uñas impecables. Agenda tu cita y déjate consentir con un trabajo detallado y profesional",
       "image": "https://live.staticflickr.com/65535/54953861396_e835f473d1.jpg",
       "link": "https://www.instagram.com/triasstudionails?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==https://www.instagram.com/triasstudionails?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       "phone": "3112336940",
       "whatsapp": "no",
-      "municipio": "Tepic",
+      "municipio": "todos",
       "active": true,
       "start": "2025-11-29",
       "end": "2025-12-31"
-    },
+    } ,
     {
       "id": "ad-007",
       "type": "banner",
@@ -114,7 +114,6 @@
       "active": true,
       "start": "2025-11-29",
       "end": "2026-12-31"
-    }
     }
   ]
 }]
