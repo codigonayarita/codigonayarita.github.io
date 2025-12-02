@@ -59,6 +59,20 @@
     {
       "id": "ad-005",
       "type": "banner",
+      "title": "Printed City Serigrafía y Bordados",
+      "text": "¡ Imprimiendo tus ideas !",
+      "image": "https://live.staticflickr.com/65535/54960547189_0b4fbb09ea_c.jpg",
+      "link": "https://www.facebook.com/profile.php?id=100063619778561&rdid=Irlsp47oZbRuinAf&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1JaQfhhEs5%2F#",
+      "phone": "3112532477",
+      "whatsapp": "no",
+      "municipio": "todos",
+      "active": true,
+      "start": "2025-11-29",
+      "end": "2026-12-31"
+    },
+    {
+      "id": "ad-006",
+      "type": "banner",
       "title": "Padron_tattoo",
       "text": "Lo mejor que puedes hacer, es darte un gustito, y que mejor si es con un tatuajito nuevo 😎🔥🔥",
       "image": "img/tatto.webp",
@@ -71,7 +85,7 @@
       "end": "2026-12-31"
     },
     {
-      "id": "ad-006",
+      "id": "ad-007",
       "type": "banner",
       "title": "Trias Studio Nails",
       "text": "Date un momento para ti y luce unas uñas impecables. Agenda tu cita y déjate consentir con un trabajo detallado y profesional",
@@ -85,7 +99,7 @@
       "end": "2025-12-31"
     },
     {
-      "id": "ad-007",
+      "id": "ad-008",
       "type": "banner",
       "title": "Taza de Café podcast",
       "text": " platicamos sobre temas interesantes, compartimos historias inspiradoras y disfrutamos de una buena taza de café ☕",
@@ -99,13 +113,27 @@
       "end": "2026-12-31"
     },
     {
-      "id": "ad-008",
+      "id": "ad-009",
       "type": "banner",
       "title": "TI INDUSTRIES",
       "text": "Brindamos soporte y mantenimiento preventivo o correctivo. Pregunta por cualquier servicio, estamos para ayudarte.",
       "image": "https://live.staticflickr.com/65535/54956788700_03cf160550.jpg",
       "link": "https://www.facebook.com/profile.php?id=61552082182452",
       "phone": "",
+      "whatsapp": "no",
+      "municipio": "todos",
+      "active": true,
+      "start": "2025-11-29",
+      "end": "2026-12-31"
+    },
+    {
+      "id": "ad-010",
+      "type": "banner",
+      "title": "Printed City Serigrafía y Bordados",
+      "text": "¡ Imprimiendo tus ideas !",
+      "image": "https://live.staticflickr.com/65535/54960547189_0b4fbb09ea_c.jpg",
+      "link": "https://www.facebook.com/profile.php?id=100063619778561&rdid=Irlsp47oZbRuinAf&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1JaQfhhEs5%2F#",
+      "phone": "3112532477",
       "whatsapp": "no",
       "municipio": "todos",
       "active": true,
