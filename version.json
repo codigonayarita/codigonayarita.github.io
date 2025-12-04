@@ -1,4 +1,4 @@
 {
-  "version": "1.3.2",
-  "notes": "Mejoras visuales en el módulo de anuncios y corrección de errores relacionados con la vista a pantalla completa."
+  "version": "1.3.3",
+  "notes": "Se corrigió el apartado de anuncios locales y se actualizó el trazo de algunas rutas para mejorar su precisión."
 }
