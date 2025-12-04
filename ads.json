@@ -27,7 +27,7 @@
       "municipio": "todos",
       "active": true,
       "start": "2025-11-29",
-      "end": "2026-12-31"
+      "end": "2026-01-04"
     },
     {
       "id": "ad-003",
@@ -82,7 +82,7 @@
       "municipio": "todos",
       "active": true,
       "start": "2025-11-29",
-      "end": "2026-12-31"
+      "end": "2026-06-31"
     },
     {
       "id": "ad-007",
@@ -96,7 +96,7 @@
       "municipio": "todos",
       "active": true,
       "start": "2025-11-29",
-      "end": "2026-12-31"
+      "end": "2026-01-04"
     },
     {
       "id": "ad-008",
@@ -166,7 +166,7 @@
       "municipio": "todos",
       "active": true,
       "start": "2025-11-29",
-      "end": "2026-12-31"
+      "end": "2026-06-31"
     }
   ]
 }]
