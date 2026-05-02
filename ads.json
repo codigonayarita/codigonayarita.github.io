@@ -43,6 +43,7 @@
       "start": "2025-08-01",
       "end": "2026-12-31"
     },
+    
     {
       "id": "ad-004",
       "type": "banner",
@@ -59,6 +60,20 @@
     {
       "id": "ad-005",
       "type": "banner",
+      "title": "Anuncia tu negocio aquí",
+      "text": "Llega a miles de usuarios en Rutas Nay todos los días. Tu marca visible justo donde la gente se mueve.",
+      "image": "https://live.staticflickr.com/65535/55242455727_469872f62b_z.jpg",
+      "link": "",
+      "phone": "3111300496",
+      "whatsapp": "si",
+      "municipio": "todos",
+      "active": true,
+      "start": "2025-11-29",
+      "end": "2026-12-31"
+    },
+    {
+      "id": "ad-006",
+      "type": "banner",
       "title": "Ixtete Dulce de Miel ",
       "text": "rico y delicioso ixtete 😋",
       "image": "https://i.ytimg.com/vi/n2dtkLlpO_E/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBReunNpfDDpaJgdx3PCfxGBevyzA",
@@ -71,7 +86,7 @@
       "end": "2026-12-31"
     },
     {
-      "id": "ad-006",
+      "id": "ad-007",
       "type": "banner",
       "title": "Printed City Serigrafía y Bordados",
       "text": "¡ Imprimiendo tus ideas !",
@@ -83,20 +98,6 @@
       "active": true,
       "start": "2025-11-29",
       "end": "2025-12-28"
-    },
-    {
-      "id": "ad-007",
-      "type": "banner",
-      "title": "La original ",
-      "text": "¡La mejor birria está en La Original! Ven y disfruta de nuestros deliciosos tacos, tortas, ramen, quesadillas de birria y chamorro",
-      "image": "https://live.staticflickr.com/65535/54962804964_c0879094a9_c.jpg",
-      "link": "https://www.facebook.com/Laoriginalbarbacoa",
-      "phone": "3111486278",
-      "whatsapp": "si",
-      "municipio": "todos",
-      "active": true,
-      "start": "2025-11-29",
-      "end": "2026-01-05"
     },
     {
       "id": "ad-008",
@@ -115,20 +116,6 @@
     {
       "id": "ad-009",
       "type": "banner",
-      "title": "Trias Studio Nails",
-      "text": "Date un momento para ti y luce unas uñas impecables. Agenda tu cita y déjate consentir con un trabajo detallado y profesional",
-      "image": "https://live.staticflickr.com/65535/54953861396_e835f473d1.jpg",
-      "link": "https://www.instagram.com/triasstudionails?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==https://www.instagram.com/triasstudionails?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-      "phone": "3112336940",
-      "whatsapp": "no",
-      "municipio": "todos",
-      "active": true,
-      "start": "2025-11-29",
-      "end": "2025-12-31"
-    },
-    {
-      "id": "ad-010",
-      "type": "banner",
       "title": "Taza de Café podcast",
       "text": " platicamos sobre temas interesantes, compartimos historias inspiradoras y disfrutamos de una buena taza de café ☕",
       "image": "https://live.staticflickr.com/65535/54974990095_ccf11bc066_c.jpg",
@@ -141,7 +128,7 @@
       "end": "2026-12-31"
     },
     {
-      "id": "ad-011",
+      "id": "ad-010",
       "type": "banner",
       "title": "TI INDUSTRIES",
       "text": "Brindamos soporte y mantenimiento preventivo o correctivo. Pregunta por cualquier servicio, estamos para ayudarte.",
@@ -155,18 +142,18 @@
       "end": "2026-12-31"
     },
     {
-      "id": "ad-012",
+      "id": "ad-011",
       "type": "banner",
-      "title": "Printed City Serigrafía y Bordados",
-      "text": "¡ Imprimiendo tus ideas !",
-      "image": "https://live.staticflickr.com/65535/54960547189_0b4fbb09ea_c.jpg",
-      "link": "https://www.facebook.com/profile.php?id=100063619778561&rdid=Irlsp47oZbRuinAf&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1JaQfhhEs5%2F#",
-      "phone": "3112532477",
-      "whatsapp": "no",
+      "title": "Anuncia tu negocio aquí",
+      "text": "Llega a miles de usuarios en Rutas Nay todos los días. Tu marca visible justo donde la gente se mueve.",
+      "image": "https://live.staticflickr.com/65535/55242455727_469872f62b_z.jpg",
+      "link": "",
+      "phone": "3111300496",
+      "whatsapp": "si",
       "municipio": "todos",
       "active": true,
       "start": "2025-11-29",
-      "end": "2025-12-28"
+      "end": "2026-12-31"
     }
   ]
 }]
