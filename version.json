@@ -1,4 +1,4 @@
 {
-  "version": "1.4.2",
-  "notes": "Se agregaron paradas a varias rutas para mejorar la cobertura y precisión. Además, se realizaron ajustes menores en el rendimiento y estabilidad de la aplicación."
+  "version": "2.0.0",
+  "notes": "Nuevo rediseño visual de la aplicación. Se agregó un nuevo buscador inteligente para encontrar colonias, calles y destinos más rápido. Mejoras en el sistema de transbordos y recomendaciones de rutas. Ahora puedes visualizar el tiempo aproximado caminando hacia la parada más cercana y seguir indicaciones visuales en el mapa. También se realizaron mejoras generales de rendimiento, navegación y experiencia de usuario."
 }
