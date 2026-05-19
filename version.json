@@ -1,4 +1,4 @@
 {
-  "version": "2.0.0",
-  "notes": "Nuevo rediseño visual de la aplicación. Se agregó un nuevo buscador inteligente para encontrar colonias, calles y destinos más rápido. Mejoras en el sistema de transbordos y recomendaciones de rutas. Ahora puedes visualizar el tiempo aproximado caminando hacia la parada más cercana y seguir indicaciones visuales en el mapa. También se realizaron mejoras generales de rendimiento, navegación y experiencia de usuario."
+  "version": "2.0.1",
+  "notes": "Corrección de errores y mejoras generales de estabilidad. Se mejoró la precisión de las indicaciones caminando hacia la parada más cercana y puntos de transbordo. Además, se agregó un nuevo botón para reiniciar búsquedas y limpiar rutas activas de forma más rápida y sencilla."
 }
