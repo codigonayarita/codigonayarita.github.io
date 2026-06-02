@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Rutas Nay | Tu Guía de Transporte Público en Nayarit</title>
+  <meta name="description" content="Consulta rutas de camiones y combis en Tepic, Xalisco, Bahía de Banderas y Compostela. Encuentra paradas, horarios e indicaciones de transbordo de forma rápida y gratuita.">
+  <meta name="keywords" content="rutas nay, transporte publico tepic, camiones tepic, combis xalisco, bahia de banderas, compostela, mapa camiones, codigo nayarita, nayarit">
+  <meta name="author" content="Código Nayarita">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rutasnay.codigonayarita.com/">
+  <meta property="og:title" content="Rutas Nay | Guía de Transporte Público en Nayarit">
+  <meta property="og:description" content="Encuentra tu ruta ideal en Tepic, Xalisco, Bahía de Banderas y Compostela. Mapas interactivos, búsquedas por colonia y más.">
+  <meta property="og:image" content="./logo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://rutasnay.codigonayarita.com/">
+  <meta property="twitter:title" content="Rutas Nay | Guía de Transporte Público en Nayarit">
+  <meta property="twitter:description" content="Encuentra tu ruta ideal en Tepic, Xalisco, Bahía de Banderas y Compostela. Mapas interactivos, búsquedas por colonia y más.">
+  <meta property="twitter:image" content="./logo.png">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./logo.png" type="image/png">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- --- HEADER & NAVIGATION --- -->
+  <header>
+    <div class="container header-container">
+      <a href="#inicio" class="logo" id="logoLink">
+        <img src="./logo.png" alt="Rutas Nay Logo Oficial">
+        <span>Rutas Nay</span>
+      </a>
+      
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#caracteristicas">Características</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-cta">
+        <a href="#descargar" class="btn btn-primary btn-pill">Descargar App</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- --- HERO SECTION --- -->
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      
+      <div class="hero-content">
+        <div class="pre-title">
+          <span class="pulse"></span> Disponible en Play Store • iOS en Desarrollo
+        </div>
+        <h1 class="hero-title">El transporte público de <span>Nayarit</span> en tu bolsillo</h1>
+        <p class="hero-description">
+          Rutas Nay es la guía definitiva e independiente para moverte en autobús (camiones) y colectivos (combis) por los municipios de <strong>Tepic, Xalisco, Bahía de Banderas y Compostela</strong>. Encuentra tu ruta ideal, evita perderte y llega a tiempo a tu destino.
+        </p>
+        
+        <div class="badge-group" id="descargar">
+          <!-- Google Play Badge -->
+          <a href="https://play.google.com/store/apps/details?id=com.codnay.rutas" target="_blank" rel="noopener" class="download-btn" id="playstoreBtn">
+            <svg viewBox="0 0 512 512">
+              <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58 33.2-60.1-60.1 60.1-60.1 58 33.2c16.1 9.2 25.1 24.4 25.1 43.7 0 19.3-9 34.5-25.1 43.7zM385.4 337.5L104.6 499l220.7-220.7 60.1 59.2z"/>
+            </svg>
+            <div class="btn-text">
+              <span class="btn-subtitle">Descárgalo en</span>
+              <span class="btn-title">Google Play</span>
+            </div>
+          </a>
+
+          <!-- App Store Badge (Soon) -->
+          <div class="download-btn ios-btn" id="appstoreBtn">
+            <span class="pulse-dot"></span>
+            <svg viewBox="0 0 384 512">
+              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-48.7-22.9-76.9-22.4-36.6.6-70.2 21.6-89 53.5-38.5 66.2-10 165.3 27.2 218.7 18.2 26.2 39.5 55.3 67.8 54.2 27.2-1.1 37.5-17.6 68.6-17.6 31.1 0 40.5 17.6 68.9 17.1 29.4-.5 48.2-26.3 66.2-52.6 20.8-30.3 29.3-59.6 29.7-61.2-.7-.3-57-21.7-57.5-86.8zM250.7 94.6c15.2-18.4 25.5-44.1 22.7-69.7-22 1-48.8 14.8-64.6 33.3-13.6 15.6-25.5 41.7-22.2 67 24.2 1.9 48.9-12.1 64.1-30.6z"/>
+            </svg>
+            <div class="btn-text">
+              <span class="btn-subtitle">Próximamente en</span>
+              <span class="btn-title">App Store (iOS)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-glow-bg"></div>
+        <!-- Modern Simulated Smartphone -->
+        <div class="phone-mockup" aria-hidden="true">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-app-header">
+              <div class="phone-app-logo">
+                <img src="./logo.png" alt="Mini Logo">
+                <span>Rutas Nay</span>
+              </div>
+              <div class="phone-app-bell">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/>
+                </svg>
+              </div>
+            </div>
+            
+            <div class="phone-app-map">
+              <div class="map-grid"></div>
+              <div class="map-route-line map-route-1"></div>
+              <div class="map-route-line map-route-2"></div>
+              <div class="map-pin start"></div>
+              <div class="map-pin end"></div>
+              <div class="map-bus-icon">🚌</div>
+            </div>
+
+            <div class="phone-app-card">
+              <div class="phone-card-title">
+                <span id="phoneRouteName">Ruta Progreso 2</span>
+                <span class="phone-card-eta" id="phoneRouteEta">35 min</span>
+              </div>
+              <div class="phone-card-route-info">
+                <span class="phone-card-badge">CENTRO</span>
+                <p id="phoneRoutePath"><span>Camión</span> • Urbano Tepic</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- --- STATS / INFOGRAPHIC SECTION --- -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">3,000+</div>
+          <div class="stat-label">Descargas en Play Store</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">Municipios Cubiertos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Usuarios Diarios</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">80+</div>
+          <div class="stat-label">Rutas Completas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- FEATURES SECTION --- -->
+  <section class="features" id="caracteristicas">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Funcionalidades</span>
+        <h2 class="section-title">Diseñado para optimizar tu viaje</h2>
+        <p class="section-desc">Descubre todas las herramientas integradas en Rutas Nay para simplificar tu movilidad diaria por el estado de Nayarit.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Mapas Detallados</h3>
+          <p class="feature-desc">Visualiza el trazado íntegro de las rutas de ida y vuelta para camiones y combis, con paradas de referencia estratégicas.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Búsqueda Inteligente</h3>
+          <p class="feature-desc">Filtra y encuentra trayectorias ingresando tu colonia de origen, escuelas, hospitales o plazas comerciales importantes.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm1 10h3l-4 4-4-4h3v-4h2v4z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Ubicación Cercana</h3>
+          <p class="feature-desc">Usa el GPS de tu celular para que la aplicación te muestre al instante qué rutas y transportes pasan a pocos metros de donde estás.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 17h5v-2h-5v2zm0-4h5v-2h-5v2zm0-4h5V7h-5v2zM2 17h10.5c.88 0 1.5-.53 1.5-1.5v-7c0-.97-.62-1.5-1.5-1.5H2c-.88 0-1.5.53-1.5 1.5v7c0 .97.62 1.5 1.5 1.5zm0-8h10v6H2V9z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Guía de Transbordo</h3>
+          <p class="feature-desc">¿No hay ruta directa? Te ayudamos a planear combinaciones inteligentes entre múltiples rutas para llegar a tu destino ahorrando tiempo.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 3.01H3c-1.1 0-2 .9-2 2V18c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5.01c0-1.1-.9-2-2-2zm-1.5 7h-6v-5h6v5zm-7.5-5v5h-6v-5h6zm-6 11v-5h6v5h-6zm7.5 0v-5h6v5h-6z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Acceso Sin Datos</h3>
+          <p class="feature-desc">Nuestra base de datos de rutas está optimizada para que cargue ultra rápido, asegurando un consumo mínimo de tus megas de internet.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M16.5 12c1.38 0 2.49-1.12 2.49-2.5S17.88 7 16.5 7C15.12 7 14 8.12 14 9.5s1.12 2.5 2.5 2.5zM9 11c1.66 0 2.99-1.34 2.99-3S10.66 5 9 5 6 6.34 6 8s1.34 3 3 3zm7.5 3c-1.83 0-5.5.92-5.5 2.75V19h11v-2.25c0-1.83-3.67-2.75-5.5-2.75zM9 13c-2.33 0-7 1.17-7 3.5V19h7v-2.25c0-.85.33-2.34 2.37-3.47C10.5 13.1 9.66 13 9 13z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Comunidad Activa</h3>
+          <p class="feature-desc">Alimentado por los propios ciudadanos. Reporta variaciones de calles, cierres viales o cambios de ruta para mantener al día la app.</p>
+        </div>
+      </div>
+
+      <!-- Government / Independent Disclaimer -->
+      <div class="disclaimer-container">
+        <div class="disclaimer-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"/>
+          </svg>
+        </div>
+        <div class="disclaimer-text">
+          <strong>Aviso de Independencia:</strong> Rutas Nay es un <strong>proyecto independiente y de carácter estrictamente informativo</strong> desarrollado por <a href="#contacto" style="color:var(--color-primary);text-decoration:underline;">Código Nayarita</a>. No está afiliado, patrocinado, respaldado ni asociado oficialmente con el Gobierno del Estado de Nayarit, la Secretaría de Movilidad (SEMOVI), ni con ninguna empresa concesionaria del transporte público. Toda la información es recabada y verificada de forma comunitaria.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- --- CONTACT & SUPPORT SECTION --- -->
+  <section class="contact" id="contacto">
+    <div class="container contact-grid">
+      
+      <div class="contact-info">
+        <span class="section-label">Contacto & Soporte</span>
+        <h2 class="contact-title">¿Tienes sugerencias o comentarios?</h2>
+        <p class="contact-desc">
+          ¡Queremos escucharte! Si detectas un cambio de ruta en tu colonia, si eres conductor de transporte público y deseas agregar tu recorrido, o simplemente quieres reportar algún error de la app, ponte en contacto con el equipo de <strong>Código Nayarita</strong>.
+        </p>
+
+        <div class="contact-details">
+          <!-- Email Contact -->
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <label>Correo Electrónico</label>
+              <a href="mailto:codigonayarita@gmail.com" id="emailContactLink">codigonayarita@gmail.com</a>
+            </div>
+          </div>
+
+          <!-- Phone Contact -->
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <label>Teléfono de Soporte</label>
+              <a href="tel:+523111300496" id="phoneContactLink">+52 311 130 0496</a>
+            </div>
+          </div>
+
+          <!-- Location Info -->
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <label>Ubicación del Proyecto</label>
+              <span>Tepic, Nayarit, México</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-container">
+        <!-- Success submission message -->
+        <div id="successAlert" class="form-success-alert" role="alert">
+          <h4>¡Mensaje Enviado con Éxito!</h4>
+          <p>Gracias por ponerte en contacto con Código Nayarita. Revisaremos tus comentarios muy pronto y nos comunicaremos contigo si es necesario.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Nombre Completo</label>
+            <input type="text" id="name" class="form-control" placeholder="Escribe tu nombre">
+            <div class="form-feedback" id="nameFeedback"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" class="form-control" placeholder="nombre@ejemplo.com">
+            <div class="form-feedback" id="emailFeedback"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Asunto</label>
+            <input type="text" id="subject" class="form-control" placeholder="Ej. Reportar cambio de ruta, Sugerencia...">
+            <div class="form-feedback" id="subjectFeedback"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" class="form-control" placeholder="Cuéntanos con detalle tu sugerencia o reporte..."></textarea>
+            <div class="form-feedback" id="messageFeedback"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="submitContactBtn">Enviar Mensaje</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- --- FOOTER --- -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="./logo.png" alt="Rutas Nay Mini Logo">
+            <span>Rutas Nay</span>
+          </div>
+          <p>
+            Guiando la movilidad en Nayarit de forma independiente y comunitaria. Encuentra tus rutas de autobús y colectivos al instante.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Enlaces Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#caracteristicas">Características</a></li>
+            <li><a href="#contacto">Contacto & Soporte</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2026 Rutas Nay. Todos los derechos reservados.
+        </p>
+        <p class="footer-dev">
+          Desarrollado con ❤️ por <a href="mailto:codigonayarita@gmail.com">Código Nayarita</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
