@@ -1,4 +1,4 @@
 {
-  "version": "2.0.1",
-  "notes": "Corrección de errores y mejoras generales de estabilidad. Se mejoró la precisión de las indicaciones caminando hacia la parada más cercana y puntos de transbordo. Además, se agregó un nuevo botón para reiniciar búsquedas y limpiar rutas activas de forma más rápida y sencilla."
+  "version": "2.0.2",
+  "notes": "Mejoras en sitios de interés del buscador y mayor precisión en la ubicación de paradas. También se corrigieron errores menores y se optimizó la estabilidad de la aplicación."
 }
