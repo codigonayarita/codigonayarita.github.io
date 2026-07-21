@@ -1,4 +1,4 @@
 {
-  "version": "2.0.2",
-  "notes": "Mejoras en sitios de interés del buscador y mayor precisión en la ubicación de paradas. También se corrigieron errores menores y se optimizó la estabilidad de la aplicación."
+  "version": "2.1.0",
+  "notes": "Se agregó la función para visualizar múltiples rutas al mismo tiempo en el mapa, permitiendo comparar y planificar mejor los recorridos. También ahora es posible ocultar la barra de búsqueda en el modo horizontal para tener una vista más amplia del mapa. Además, se realizaron mejoras de estabilidad y correcciones menores."
 }
