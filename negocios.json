@@ -1,0 +1,131 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.8942, 21.5085]
+      },
+      "properties": {
+        "nombre": "CicloFix Tepic",
+        "tipo": "Taller",
+        "zona": "Tepic Centro",
+        "ciudad": "Tepic",
+        "descripcionBreve": "Taller especializado en mantenimiento y refacciones.",
+        "numero": "311 123 4567",
+        "redes": { "web": "", "facebook": "", "instagram": "" },
+        "imagen": "img/logo.png",
+        "rating": 4.9,
+        "visible": true,
+        "icon": "fa-wrench",
+        "color": "#0284c7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.8995, 21.4485]
+      },
+      "properties": {
+        "nombre": "Bici Taller Xalisco",
+        "tipo": "Taller",
+        "zona": "Xalisco Centro",
+        "ciudad": "Xalisco",
+        "descripcionBreve": "Reparación exprés, parches, ajuste de frenos y cambios.",
+        "numero": "311 234 5678",
+        "redes": { "web": "", "facebook": "", "instagram": "" },
+        "imagen": "img/logo.png",
+        "rating": 4.8,
+        "visible": true,
+        "icon": "fa-wrench",
+        "color": "#0284c7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.8825, 21.4880]
+      },
+      "properties": {
+        "nombre": "La Rodada Taller",
+        "tipo": "Tienda de bicis",
+        "zona": "Ciudad del Valle",
+        "ciudad": "Tepic",
+        "descripcionBreve": "Servicio preventivo, lavado profesional y accesorios.",
+        "numero": "311 345 6789",
+        "redes": { "web": "", "facebook": "", "instagram": "" },
+        "imagen": "img/logo.png",
+        "rating": 4.9,
+        "visible": true,
+        "icon": "fa-shop",
+        "color": "#0284c7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.902262, 21.500761]
+      },
+      "properties": {
+        "nombre": "SAMAO BIKES Taller & Tienda",
+        "tipo": "Tienda de bicis",
+        "zona": "San Juan",
+        "ciudad": "Tepic",
+        "descripcionBreve": "Taller mecánico ciclista y refacciones de alta gama.",
+        "numero": "311 456 7890",
+        "redes": { "web": "", "facebook": "", "instagram": "" },
+        "imagen": "img/logo.png",
+        "rating": 5.0,
+        "visible": true,
+        "icon": "fa-shop",
+        "color": "#0284c7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.8700, 21.4800]
+      },
+      "properties": {
+        "nombre": "Taller CicloRápido Las Brisas",
+        "tipo": "Renta de bicis",
+        "zona": "Las Brisas",
+        "ciudad": "Tepic",
+        "descripcionBreve": "Reparación general, inflado de llantas y nivelado.",
+        "numero": "311 567 8901",
+        "redes": { "web": "", "facebook": "", "instagram": "" },
+        "imagen": "img/logo.png",
+        "rating": 4.7,
+        "visible": true,
+        "icon": "fa-bicycle",
+        "color": "#0284c7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.8875, 21.5225]
+      },
+      "properties": {
+        "nombre": "Bici Taller Mololoa",
+        "tipo": "Taller",
+        "zona": "Mololoa",
+        "ciudad": "Tepic",
+        "descripcionBreve": "Ajuste de velocidades, cambios de cámara y engrase.",
+        "numero": "311 678 9012",
+        "redes": { "web": "", "facebook": "", "instagram": "" },
+        "imagen": "img/logo.png",
+        "rating": 4.8,
+        "visible": true,
+        "icon": "fa-wrench",
+        "color": "#0284c7"
+      }
+    }
+  ]
+}
