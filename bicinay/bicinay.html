@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiciNay — Nayarit en Bici | Rutas, Ciclopuertos y más</title>
+    <meta name="description" content="BiciNay es la app gratuita de la comunidad ciclista de Nayarit. Descubre rutas, ciclopuertos, talleres, parques y mucho más. Desarrollada por Codigo Nayarita.">
+    <meta property="og:title" content="BiciNay — Nayarit en Bici">
+    <meta property="og:description" content="La app gratuita para la comunidad ciclista de Nayarit. Rutas, ciclopuertos, talleres y más.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#005bfa">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --blue:       #005bfa;
+            --blue-dark:  #0045c4;
+            --blue-deep:  #002f8a;
+            --blue-light: #eff6ff;
+            --green:      #10b981;
+            --amber:      #f59e0b;
+            --red:        #ef4444;
+            --text:       #0f172a;
+            --text-2:     #334155;
+            --text-3:     #64748b;
+            --border:     #e2e8f0;
+            --surface:    #ffffff;
+            --bg:         #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--surface);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ─── NAV ─────────────────────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(226,232,240,0.7);
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1080px;
+            margin: auto;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            object-fit: contain;
+            background: var(--blue-light);
+            padding: 3px;
+        }
+
+        .nav-brand-name {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--blue);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-2);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--blue); }
+
+        .nav-cta {
+            background: var(--blue);
+            color: #fff !important;
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 14px rgba(0,91,250,0.3);
+            transition: box-shadow 0.2s, transform 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            box-shadow: 0 6px 20px rgba(0,91,250,0.45) !important;
+            transform: translateY(-1px);
+            color: #fff !important;
+        }
+
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+        }
+
+        /* ─── HERO ─────────────────────────────────────────── */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(160deg, #002f8a 0%, #005bfa 55%, #0ea5e9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 50% at 80% 30%, rgba(14,165,233,0.25) 0%, transparent 65%),
+                radial-gradient(ellipse 50% 60% at 10% 80%, rgba(0,45,138,0.4) 0%, transparent 60%);
+        }
+
+        /* floating blobs */
+        .hero-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.18;
+            pointer-events: none;
+        }
+        .hero-blob-1 { width: 500px; height: 500px; background: #60a5fa; top: -100px; right: -100px; animation: float1 8s ease-in-out infinite; }
+        .hero-blob-2 { width: 350px; height: 350px; background: #0ea5e9; bottom: -80px; left: -60px; animation: float2 11s ease-in-out infinite; }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0,0) scale(1); }
+            50%       { transform: translate(-30px, 30px) scale(1.05); }
+        }
+        @keyframes float2 {
+            0%, 100% { transform: translate(0,0); }
+            50%       { transform: translate(20px, -20px); }
+        }
+
+        .hero-inner {
+            max-width: 1080px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 999px;
+            padding: 5px 14px 5px 8px;
+            font-size: 12px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+            backdrop-filter: blur(8px);
+            width: fit-content;
+        }
+
+        .hero-badge-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 0 3px rgba(74,222,128,0.3);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { box-shadow: 0 0 0 3px rgba(74,222,128,0.3); }
+            50%       { box-shadow: 0 0 0 6px rgba(74,222,128,0.1); }
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5.5vw, 62px);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -2px;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, #7dd3fc, #e0f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            color: rgba(255,255,255,0.78);
+            line-height: 1.65;
+            margin-bottom: 36px;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 800;
+            padding: 13px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 13px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            border: 1.5px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(8px);
+            transition: all 0.25s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Phone mockup */
+        .hero-phone-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-mockup {
+            width: 240px;
+            height: 490px;
+            background: #0a0a0a;
+            border-radius: 44px;
+            padding: 12px;
+            box-shadow:
+                0 40px 80px rgba(0,0,0,0.5),
+                0 0 0 1px rgba(255,255,255,0.08),
+                inset 0 0 0 1px rgba(255,255,255,0.04);
+            position: relative;
+            animation: phoneFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes phoneFloat {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50%       { transform: translateY(-18px) rotate(-2deg); }
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #005bfa 0%, #0045c4 40%, #1e3a5f 100%);
+            border-radius: 34px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 90px; height: 26px;
+            background: #0a0a0a;
+            border-radius: 0 0 16px 16px;
+            z-index: 2;
+        }
+
+        .phone-logo-circle {
+            width: 76px; height: 76px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            padding: 10px;
+        }
+
+        .phone-logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .phone-app-name {
+            font-size: 22px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .phone-app-sub {
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .phone-chips {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            width: 80%;
+            margin-top: 8px;
+        }
+
+        .phone-chip {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.85);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .phone-chip i { font-size: 10px; }
+
+        .phone-progress-bar {
+            width: 80%;
+            height: 4px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 99px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .phone-progress-fill {
+            height: 100%;
+            width: 70%;
+            background: #ffffff;
+            border-radius: 99px;
+            animation: progressAnim 2.5s ease-in-out infinite;
+        }
+
+        @keyframes progressAnim {
+            0%   { width: 15%; }
+            50%  { width: 85%; }
+            100% { width: 15%; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+            .hero-badge { margin: 0 auto 20px; }
+            .hero-actions { justify-content: center; }
+            .hero-phone-wrap { order: -1; }
+            .phone-mockup { width: 180px; height: 368px; }
+        }
+
+        /* ─── SECTION WRAPPER ──────────────────────────────── */
+        section { padding: 96px 24px; }
+
+        .section-inner {
+            max-width: 1080px;
+            margin: auto;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--blue);
+            background: var(--blue-light);
+            padding: 5px 13px;
+            border-radius: 999px;
+            margin-bottom: 14px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: -1.2px;
+            color: var(--text);
+            margin-bottom: 14px;
+        }
+
+        .section-sub {
+            font-size: 17px;
+            color: var(--text-3);
+            max-width: 560px;
+            line-height: 1.65;
+        }
+
+        /* ─── STATS BAR ─────────────────────────────────────── */
+        .stats-bar {
+            background: var(--blue);
+            padding: 0 24px;
+        }
+
+        .stats-inner {
+            max-width: 1080px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .stat-item {
+            padding: 36px 24px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.12);
+            position: relative;
+        }
+
+        .stat-item:last-child { border-right: none; }
+
+        .stat-num {
+            font-size: 36px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: -1px;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: rgba(255,255,255,0.65);
+            font-weight: 600;
+        }
+
+        @media (max-width: 640px) {
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .stat-item:nth-child(2) { border-right: none; }
+            .stat-item:nth-child(1),
+            .stat-item:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.12); }
+        }
+
+        /* ─── FEATURES ──────────────────────────────────────── */
+        .features-bg { background: var(--bg); }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 56px;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 28px;
+            transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue), #60a5fa);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px rgba(0,91,250,0.1);
+            border-color: rgba(0,91,250,0.2);
+        }
+
+        .feature-card:hover::before { opacity: 1; }
+
+        .feature-icon {
+            width: 52px; height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 18px;
+        }
+
+        .fi-blue   { background: #eff6ff; color: #005bfa; }
+        .fi-green  { background: #dcfce7; color: #10b981; }
+        .fi-amber  { background: #fef3c7; color: #f59e0b; }
+        .fi-red    { background: #fee2e2; color: #ef4444; }
+        .fi-purple { background: #f3e8ff; color: #9333ea; }
+        .fi-teal   { background: #ccfbf1; color: #0d9488; }
+
+        .feature-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            color: var(--text-3);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 540px) { .features-grid { grid-template-columns: 1fr; } }
+
+        /* ─── HOW IT WORKS ──────────────────────────────────── */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 56px;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: calc(16.66% + 24px);
+            right: calc(16.66% + 24px);
+            height: 2px;
+            background: linear-gradient(90deg, var(--blue-light), var(--blue), var(--blue-light));
+        }
+
+        .step-item { text-align: center; }
+
+        .step-number {
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+            color: #fff;
+            font-size: 22px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 20px rgba(0,91,250,0.35);
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .step-desc {
+            font-size: 14px;
+            color: var(--text-3);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 640px) {
+            .steps-grid { grid-template-columns: 1fr; gap: 28px; }
+            .steps-grid::before { display: none; }
+        }
+
+        /* ─── ROUTE TYPES ───────────────────────────────────── */
+        .routes-bg { background: var(--bg); }
+
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 56px;
+        }
+
+        .route-card {
+            border-radius: 22px;
+            padding: 32px 28px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .route-card:hover { transform: translateY(-6px); }
+
+        .route-card::after {
+            content: '';
+            position: absolute;
+            bottom: -40px; right: -40px;
+            width: 130px; height: 130px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.07);
+        }
+
+        .rc-mtb  { background: linear-gradient(135deg, #7f1d1d, #dc2626); }
+        .rc-road { background: linear-gradient(135deg, #1e293b, #475569); }
+        .rc-tour { background: linear-gradient(135deg, #7c2d12, #f97316); }
+
+        .route-card-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .route-card-title {
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .route-card-desc {
+            font-size: 13.5px;
+            opacity: 0.75;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 640px) { .routes-grid { grid-template-columns: 1fr; } }
+
+        /* ─── MAP TECH ──────────────────────────────────────── */
+        .tech-card {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            border-radius: 28px;
+            padding: 48px;
+            margin-top: 56px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: -80px; right: -80px;
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,91,250,0.25) 0%, transparent 70%);
+        }
+
+        .tech-icon-big {
+            width: 90px; height: 90px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #60a5fa;
+            flex-shrink: 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .tech-text h3 {
+            font-size: 24px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .tech-text p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.65;
+        }
+
+        @media (max-width: 640px) {
+            .tech-card { flex-direction: column; gap: 24px; padding: 32px 24px; text-align: center; }
+        }
+
+        /* ─── FREE BADGE ────────────────────────────────────── */
+        .free-section {
+            text-align: center;
+            background: linear-gradient(160deg, var(--blue-deep) 0%, var(--blue) 100%);
+            padding: 80px 24px;
+        }
+
+        .free-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 999px;
+            padding: 10px 22px;
+            font-size: 18px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 24px;
+        }
+
+        .free-section h2 {
+            font-size: clamp(28px, 5vw, 46px);
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: -1.5px;
+            margin-bottom: 14px;
+        }
+
+        .free-section p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.7);
+            max-width: 500px;
+            margin: 0 auto 36px;
+            line-height: 1.65;
+        }
+
+        .stores-row {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            border: 1.5px solid rgba(255,255,255,0.25);
+            border-radius: 14px;
+            padding: 12px 22px;
+            text-decoration: none;
+            color: #ffffff;
+            backdrop-filter: blur(10px);
+            transition: all 0.25s;
+        }
+
+        .store-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+        }
+
+        .store-btn i { font-size: 26px; }
+
+        .store-btn-text { text-align: left; }
+        .store-btn-text span { display: block; font-size: 10px; opacity: 0.7; font-weight: 500; }
+        .store-btn-text strong { font-size: 15px; font-weight: 800; }
+
+        /* ─── CONTACT ───────────────────────────────────────── */
+        .contact-bg { background: var(--bg); }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 56px;
+        }
+
+        .contact-info-block {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 20px;
+            transition: all 0.25s;
+        }
+
+        .contact-item:hover {
+            border-color: rgba(0,91,250,0.25);
+            box-shadow: 0 8px 24px rgba(0,91,250,0.08);
+            transform: translateX(4px);
+        }
+
+        .contact-item-icon {
+            width: 46px; height: 46px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .ci-blue  { background: #eff6ff; color: var(--blue); }
+        .ci-green { background: #dcfce7; color: #10b981; }
+        .ci-amber { background: #fef3c7; color: #f59e0b; }
+
+        .contact-item-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+        }
+
+        .contact-item-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .contact-item-value a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .contact-item-value a:hover { text-decoration: underline; }
+
+        /* Privacy card */
+        .privacy-link-card {
+            background: linear-gradient(135deg, #005bfa, #0045c4);
+            border-radius: 22px;
+            padding: 36px 32px;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .privacy-link-card h3 {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .privacy-link-card p {
+            font-size: 14px;
+            opacity: 0.72;
+            line-height: 1.6;
+        }
+
+        .privacy-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            border: 1.5px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            padding: 11px 20px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            backdrop-filter: blur(8px);
+            transition: background 0.2s;
+            width: fit-content;
+        }
+
+        .privacy-link-btn:hover { background: rgba(255,255,255,0.25); }
+
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+        /* ─── FOOTER ────────────────────────────────────────── */
+        footer {
+            background: #0a0f1e;
+            padding: 56px 24px 36px;
+        }
+
+        .footer-inner {
+            max-width: 1080px;
+            margin: auto;
+        }
+
+        .footer-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            flex-wrap: wrap;
+        }
+
+        .footer-brand { max-width: 320px; }
+
+        .footer-brand-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .footer-logo {
+            width: 40px; height: 40px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+            padding: 6px;
+            object-fit: contain;
+        }
+
+        .footer-brand-name {
+            font-size: 20px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-brand-desc {
+            font-size: 14px;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.6;
+        }
+
+        .footer-links-col h4 {
+            font-size: 13px;
+            font-weight: 800;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+        }
+
+        .footer-links-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .footer-links-col a {
+            text-decoration: none;
+            font-size: 14px;
+            color: rgba(255,255,255,0.55);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .footer-links-col a:hover { color: #ffffff; }
+
+        .footer-bottom {
+            padding-top: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .footer-copy strong { color: rgba(255,255,255,0.55); }
+
+        .footer-dev-tag {
+            font-size: 12px;
+            color: rgba(255,255,255,0.25);
+        }
+
+        /* ─── SCROLL ANIMATIONS ────────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.16,1,0.3,1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ─── BACK TO TOP ────────────────────────────────── */
+        #backTop {
+            position: fixed;
+            bottom: 22px; right: 22px;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(0,91,250,0.35);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+        }
+        #backTop.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+        #backTop:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,91,250,0.45); }
+    </style>
+</head>
+<body>
+
+<!-- ─── NAV ────────────────────────────────────────── -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-brand">
+            <img src="img/logo.png" alt="BiciNay Logo" class="nav-logo"
+                 onerror="this.style.display='none'">
+            <span class="nav-brand-name">BiciNay</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#caracteristicas">Características</a></li>
+            <li><a href="#rutas">Rutas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#contacto" class="nav-cta">Descargar gratis</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────── -->
+<section class="hero" id="inicio">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <div class="hero-badge-dot"></div>
+                Disponible ahora · Gratis
+            </div>
+
+            <h1>Nayarit<br><span>en Bici</span></h1>
+
+            <p class="hero-sub">
+                Descubre rutas ciclistas, ciclopuertos, talleres y parques de
+                Nayarit en una sola app. Sin costo, sin registro, sin límites.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#caracteristicas" class="btn-primary">
+                    <i class="fas fa-bicycle"></i>
+                    Explorar la app
+                </a>
+                <a href="#contacto" class="btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Contacto
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-phone-wrap">
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="phone-notch"></div>
+                    <div class="phone-logo-circle">
+                        <img src="img/logo.png" alt="BiciNay"
+                             onerror="this.outerHTML='<i class=\'fas fa-bicycle\' style=\'font-size:36px;color:#005bfa;\'></i>'">
+                    </div>
+                    <div class="phone-app-name">BiciNay</div>
+                    <div class="phone-app-sub">Nayarit en Bici</div>
+                    <div class="phone-chips">
+                        <div class="phone-chip"><i class="fas fa-map-location-dot"></i> Cargando mapa...</div>
+                        <div class="phone-chip"><i class="fas fa-location-dot"></i> Obteniendo GPS...</div>
+                    </div>
+                    <div class="phone-progress-bar">
+                        <div class="phone-progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── STATS ─────────────────────────────────────────── -->
+<div class="stats-bar">
+    <div class="stats-inner">
+        <div class="stat-item reveal">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Gratis, siempre</div>
+        </div>
+        <div class="stat-item reveal">
+            <div class="stat-num">3+</div>
+            <div class="stat-label">Tipos de rutas</div>
+        </div>
+        <div class="stat-item reveal">
+            <div class="stat-num">iOS &amp; Android</div>
+            <div class="stat-label">Plataformas</div>
+        </div>
+        <div class="stat-item reveal">
+            <div class="stat-num">Nayarit</div>
+            <div class="stat-label">Comunidad ciclista</div>
+        </div>
+    </div>
+</div>
+
+<!-- ─── FEATURES ──────────────────────────────────────── -->
+<section class="features-bg" id="caracteristicas">
+    <div class="section-inner">
+        <div class="section-tag reveal">
+            <i class="fas fa-sparkles"></i> Características
+        </div>
+        <h2 class="section-title reveal">Todo lo que necesitas<br>para pedalear Nayarit</h2>
+        <p class="section-sub reveal">BiciNay reúne la información más completa sobre infraestructura ciclista del estado en una app ligera y fácil de usar.</p>
+
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-icon fi-blue">
+                    <i class="fas fa-route"></i>
+                </div>
+                <div class="feature-title">Rutas ciclistas</div>
+                <div class="feature-desc">Explora rutas de montaña, carretera y cicloturismo con detalles de distancia, dificultad y elevación.</div>
+            </div>
+
+            <div class="feature-card reveal">
+                <div class="feature-icon fi-green">
+                    <i class="fas fa-bicycle"></i>
+                </div>
+                <div class="feature-title">Ciclopuertos</div>
+                <div class="feature-desc">Localiza todos los ciclopuertos disponibles en la ciudad para estacionar tu bici de forma segura.</div>
+            </div>
+
+            <div class="feature-card reveal">
+                <div class="feature-icon fi-amber">
+                    <i class="fas fa-wrench"></i>
+                </div>
+                <div class="feature-title">Talleres y servicios</div>
+                <div class="feature-desc">Encuentra talleres de bicicletas, tiendas de accesorios y servicios de renta cercanos a ti.</div>
+            </div>
+
+            <div class="feature-card reveal">
+                <div class="feature-icon fi-teal">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div class="feature-title">Parques y ciclovías</div>
+                <div class="feature-desc">Descubre parques, senderos y ciclovías para un paseo tranquilo con familia o amigos.</div>
+            </div>
+
+            <div class="feature-card reveal">
+                <div class="feature-icon fi-purple">
+                    <i class="fas fa-location-dot"></i>
+                </div>
+                <div class="feature-title">Ubicación en tiempo real</div>
+                <div class="feature-desc">Ve tu posición en el mapa y encuentra puntos de interés cercanos a donde te encuentras.</div>
+            </div>
+
+            <div class="feature-card reveal">
+                <div class="feature-icon fi-blue">
+                    <i class="fas fa-map"></i>
+                </div>
+                <div class="feature-title">Mapas Mapbox</div>
+                <div class="feature-desc">Mapas detallados y fluidos con zoom, navegación táctil y visualización de capas geográficas.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── HOW IT WORKS ───────────────────────────────────── -->
+<section>
+    <div class="section-inner">
+        <div class="section-tag reveal">
+            <i class="fas fa-circle-info"></i> Cómo funciona
+        </div>
+        <h2 class="section-title reveal">Fácil de usar<br>desde el primer momento</h2>
+        <p class="section-sub reveal">No necesitas crear una cuenta ni hacer ningún pago. Solo descarga y explora.</p>
+
+        <div class="steps-grid">
+            <div class="step-item reveal">
+                <div class="step-number">1</div>
+                <div class="step-title">Descarga la app</div>
+                <div class="step-desc">Disponible gratis en App Store y Google Play. Sin suscripción, sin registro.</div>
+            </div>
+            <div class="step-item reveal">
+                <div class="step-number">2</div>
+                <div class="step-title">Activa tu ubicación</div>
+                <div class="step-desc">Permite el acceso a tu GPS para ver contenido cercano y navegar en el mapa.</div>
+            </div>
+            <div class="step-item reveal">
+                <div class="step-number">3</div>
+                <div class="step-title">¡A pedalear!</div>
+                <div class="step-desc">Explora rutas, ciclopuertos, talleres y parques. Nayarit en bici, al alcance de tu mano.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── ROUTES ────────────────────────────────────────── -->
+<section class="routes-bg" id="rutas">
+    <div class="section-inner">
+        <div class="section-tag reveal">
+            <i class="fas fa-person-biking"></i> Tipos de rutas
+        </div>
+        <h2 class="section-title reveal">Rutas para todos<br>los ciclistas</h2>
+        <p class="section-sub reveal">Desde rutas de montaña exigentes hasta paseos turísticos tranquilos, BiciNay tiene una ruta para cada tipo de ciclista.</p>
+
+        <div class="routes-grid">
+            <div class="route-card rc-mtb reveal">
+                <div class="route-card-icon"><i class="fas fa-mountain"></i></div>
+                <div class="route-card-title">Montaña (MTB)</div>
+                <div class="route-card-desc">Rutas de trail y enduro en las montañas de Nayarit. Con información de dificultad, distancia y elevación.</div>
+            </div>
+            <div class="route-card rc-road reveal">
+                <div class="route-card-icon"><i class="fas fa-road"></i></div>
+                <div class="route-card-title">Carretera</div>
+                <div class="route-card-desc">Rutas en carretera para ciclismo de ruta. Perfectas para entrenamientos de largo aliento.</div>
+            </div>
+            <div class="route-card rc-tour reveal">
+                <div class="route-card-icon"><i class="fas fa-compass"></i></div>
+                <div class="route-card-title">Cicloturismo</div>
+                <div class="route-card-desc">Recorridos turísticos para descubrir los paisajes y pueblos de Nayarit pedaleando.</div>
+            </div>
+        </div>
+
+        <div class="tech-card reveal">
+            <div class="tech-icon-big">
+                <i class="fas fa-map-location-dot"></i>
+            </div>
+            <div class="tech-text">
+                <h3>Mapas potenciados por Mapbox</h3>
+                <p>BiciNay utiliza la tecnología de Mapbox para ofrecer mapas precisos, fluidos y con alto nivel de detalle. Los datos de ubicación se procesan localmente en tu dispositivo — nunca se almacenan en nuestros servidores.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FREE ──────────────────────────────────────────── -->
+<div class="free-section">
+    <div class="free-badge">
+        <i class="fas fa-gift"></i>
+        100% Gratuita
+    </div>
+    <h2>Sin costo. Sin registro.<br>Sin límites.</h2>
+    <p>BiciNay es y seguirá siendo gratuita. Descárgala hoy y únete a la comunidad ciclista de Nayarit.</p>
+
+    <div class="stores-row">
+        <a href="#" class="store-btn" id="appstore-btn">
+            <i class="fab fa-apple"></i>
+            <div class="store-btn-text">
+                <span>Disponible en</span>
+                <strong>App Store</strong>
+            </div>
+        </a>
+        <a href="#" class="store-btn" id="playstore-btn">
+            <i class="fab fa-google-play"></i>
+            <div class="store-btn-text">
+                <span>Disponible en</span>
+                <strong>Google Play</strong>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- ─── CONTACT ───────────────────────────────────────── -->
+<section class="contact-bg" id="contacto">
+    <div class="section-inner">
+        <div class="section-tag reveal">
+            <i class="fas fa-headset"></i> Contacto
+        </div>
+        <h2 class="section-title reveal">¿Tienes preguntas<br>o comentarios?</h2>
+        <p class="section-sub reveal">Estamos aquí para ayudarte. Contáctanos por teléfono o correo electrónico.</p>
+
+        <div class="contact-grid">
+            <div class="contact-info-block">
+                <div class="contact-item reveal">
+                    <div class="contact-item-icon ci-blue">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div>
+                        <div class="contact-item-label">Desarrollador</div>
+                        <div class="contact-item-value">Codigo Nayarita</div>
+                    </div>
+                </div>
+
+                <div class="contact-item reveal">
+                    <div class="contact-item-icon ci-green">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <div class="contact-item-label">Teléfono</div>
+                        <div class="contact-item-value">
+                            <a href="tel:+523111300496">311 130 0496</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-item reveal">
+                    <div class="contact-item-icon ci-amber">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <div class="contact-item-label">Correo electrónico</div>
+                        <div class="contact-item-value">
+                            <a href="mailto:codigonayarita@gmail.com">codigonayarita@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-item reveal">
+                    <div class="contact-item-icon ci-blue">
+                        <i class="fas fa-location-pin"></i>
+                    </div>
+                    <div>
+                        <div class="contact-item-label">Ubicación</div>
+                        <div class="contact-item-value">Tepic, Nayarit, México</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal">
+                <div class="privacy-link-card">
+                    <div>
+                        <h3>Política de Privacidad</h3>
+                        <p>Conoce cómo BiciNay maneja la información durante el uso de la aplicación. Tu privacidad es nuestra prioridad.</p>
+                    </div>
+                    <a href="privacidad.html" class="privacy-link-btn" id="privacy-policy-link">
+                        <i class="fas fa-shield-halved"></i>
+                        Leer política de privacidad
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────── -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-brand-row">
+                    <img src="img/logo.png" alt="BiciNay" class="footer-logo"
+                         onerror="this.style.display='none'">
+                    <span class="footer-brand-name">BiciNay</span>
+                </div>
+                <p class="footer-brand-desc">La app gratuita de la comunidad ciclista de Nayarit. Descubre rutas, ciclopuertos, talleres y más.</p>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>App</h4>
+                <ul>
+                    <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#rutas">Tipos de rutas</a></li>
+                    <li><a href="#inicio">Descargar</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacidad.html">Política de privacidad</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="tel:+523111300496">311 130 0496</a></li>
+                    <li><a href="mailto:codigonayarita@gmail.com">codigonayarita@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copy">
+                © <span id="footerYear"></span> <strong>Codigo Nayarita</strong>. Todos los derechos reservados.
+            </p>
+            <p class="footer-dev-tag">BiciNay · Nayarit en Bici</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to top -->
+<button id="backTop" aria-label="Volver arriba">↑</button>
+
+<script>
+    // Footer year
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    // Back to top
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', () => {
+        backTop.classList.toggle('show', window.scrollY > 400);
+    });
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                // Stagger siblings
+                const siblings = [...entry.target.parentElement.querySelectorAll('.reveal')];
+                const idx = siblings.indexOf(entry.target);
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, idx * 80);
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
