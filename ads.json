@@ -58,7 +58,21 @@
       "end": "2026-12-31"
     },
     {
-      "id": "ad-005",
+      "id": "ad-05",
+      "type": "banner",
+        "title": "Aniayar",
+      "text": "Soluciones integrales en ingeniería, instalaciones y mantenimiento para tu hogar, negocio o industria. ¡Estamos para ayudarte!",
+      "image": "https://live.staticflickr.com/65535/55644068933_085608be00_b.jpg",
+      "link": "",
+      "phone": "3111300496",
+      "whatsapp": "si",
+      "municipio": "todos",
+      "active": true,
+      "start": "2025-11-29",
+      "end": "2026-12-31"
+    },
+    {
+      "id": "ad-006",
       "type": "banner",
       "title": "Anuncia tu negocio aquí",
       "text": "Llega a miles de usuarios en Rutas Nay todos los días. Tu marca visible justo donde la gente se mueve.",
@@ -72,7 +86,7 @@
       "end": "2026-12-31"
     },
     {
-      "id": "ad-006",
+      "id": "ad-007",
       "type": "banner",
       "title": "Ixtete Dulce de Miel ",
       "text": "rico y delicioso ixtete 😋",
@@ -86,7 +100,7 @@
       "end": "2026-12-31"
     },
     {
-      "id": "ad-007",
+      "id": "ad-008",
       "type": "banner",
       "title": "Vivero Xochimilco",
       "text": "Manejamos precios Menudeo y Mayoreo, todo para decoración de jardín o centros de mesas ‼️",
@@ -100,7 +114,7 @@
       "end": "2027-05-30"
     },
     {
-      "id": "ad-008",
+      "id": "ad-009",
       "type": "banner",
       "title": "Padron_tattoo",
       "text": "Lo mejor que puedes hacer, es darte un gustito, y que mejor si es con un tatuajito nuevo 😎🔥🔥",
@@ -114,7 +128,7 @@
       "end": "2026-12-31"
     },
     {
-      "id": "ad-009",
+      "id": "ad-010",
       "type": "banner",
       "title": "Taza de Café podcast",
       "text": " platicamos sobre temas interesantes, compartimos historias inspiradoras y disfrutamos de una buena taza de café ☕",
@@ -128,7 +142,7 @@
       "end": "2026-12-31"
     },
     {
-      "id": "ad-010",
+      "id": "ad-011",
       "type": "banner",
       "title": "TI INDUSTRIES",
       "text": "Brindamos soporte y mantenimiento preventivo o correctivo. Pregunta por cualquier servicio, estamos para ayudarte.",
@@ -142,25 +156,11 @@
       "end": "2026-12-31"
     },
     {
-      "id": "ad-011",
+      "id": "ad-012",
       "type": "banner",
       "title": "Anuncia tu negocio aquí",
       "text": "Llega a miles de usuarios en Rutas Nay todos los días. Tu marca visible justo donde la gente se mueve.",
       "image": "https://live.staticflickr.com/65535/55242455727_469872f62b_z.jpg",
-      "link": "",
-      "phone": "3111300496",
-      "whatsapp": "si",
-      "municipio": "todos",
-      "active": true,
-      "start": "2025-11-29",
-      "end": "2026-12-31"
-    },
-    {
-      "id": "ad-012",
-      "type": "banner",
-        "title": "Aniayar",
-      "text": "Brindamos soluciones integrales en ingeniería, instalaciones y mantenimiento preventivo o correctivo. Atendemos tu hogar, negocio o industria. ¡Estamos para ayudarte!",
-      "image": "https://live.staticflickr.com/65535/55644068933_085608be00_b.jpg",
       "link": "",
       "phone": "3111300496",
       "whatsapp": "si",
