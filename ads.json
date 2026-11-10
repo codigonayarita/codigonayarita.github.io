@@ -154,6 +154,20 @@
       "active": true,
       "start": "2025-11-29",
       "end": "2026-12-31"
+    },
+    {
+      "id": "ad-012",
+      "type": "banner",
+        "title": "Aniayar",
+      "text": "Ingenieria y Servicios Integrales",
+      "image": "https://live.staticflickr.com/65535/55644068933_085608be00_b.jpg",
+      "link": "",
+      "phone": "3111300496",
+      "whatsapp": "si",
+      "municipio": "todos",
+      "active": true,
+      "start": "2025-11-29",
+      "end": "2026-12-31"
     }
   ]
 }]
